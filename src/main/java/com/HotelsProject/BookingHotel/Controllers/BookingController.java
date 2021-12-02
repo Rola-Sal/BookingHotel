@@ -13,10 +13,6 @@ public class BookingController {
     @Autowired
     BookingService bookingService;
 
-    @RequestMapping(method = RequestMethod.GET,value="/Hi")
-    public String str(){
-        return "Hiii";}
-
     @RequestMapping(method = RequestMethod.GET,value="/customers/{customerID}/cities/{cityID}/hotels/{hotelID}/{strBook}")
     public String bookHotel(@PathVariable Integer customerID, @PathVariable Integer cityID, @PathVariable Integer hotelID, @PathVariable String strBook){
         return bookingService.bookHotel(customerID,cityID, hotelID, strBook);
